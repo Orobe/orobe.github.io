@@ -16,9 +16,24 @@ body {
 }
 
 header {
+  display: flex;
   background-color: var(--color-dark);
-  padding: 1em;
   box-shadow: var(--color-black) 0px 0 6px 0px
+}
+
+header .header-wrap {
+  display: flex;
+  gap: 4em; 
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 1em 4em;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-light);
 }
 
 h1 {
