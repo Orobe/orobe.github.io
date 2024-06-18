@@ -13,7 +13,7 @@
 <body>
     <script type="text/javascript" src="bootstrap-5.0.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="p5.min.js"></script>
-    <script type="text/javascript" src="gaussian-blur.js"></script>
+    <script type="text/javascript" src="sobel-operator.js"></script>
     <div class="page">
         <div class="header">
             <header>
@@ -51,10 +51,10 @@
                 </div>
                 <div class="side-bar col-lg-4 column">
                     <div class="description-container">
-                        <h1>Sobel operator</h1>
-                        <p>Sobel operator implementation using kernel convolution and <a href="https://p5js.org/"
+                        <h1>Sobel Operator</h1>
+                        <p>Sobel operator edge detection implementation using kernel convolution and <a href="https://p5js.org/"
                                 target="_blank" rel="noreferrer noopener">p5.js</a>.</p>
-                        <p>Upload an image and use the slider to change the filter radius. You can download the result
+                        <p>To begin, upload an image and click the Start button. You can download the result
                             once the image is processed.</p>
                         <p><a href="https://processing.org/" target="_blank" rel="noreferrer noopener">Processing</a>
                             version available on <a
@@ -73,10 +73,6 @@
                                 <div><span class="warning">High resolution images may take a while to process.</span>
                                 </div>
                             </form>
-                        </div>
-                        <div class="preferences-container">
-                            <label>Filter radius: </label><input id="radius-value" type="number" min="1" max="1000" value="1">
-                            <input id="radius-slider" min="1" max="100" value="1" class="form-range radius-range" type="range">
                         </div>
                         <div class="button-container">
                             <button type="button" id="btn-start" class="btn btn-primary btn-start"
