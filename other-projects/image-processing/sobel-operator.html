@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobel Operator</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="bootstrap-5.0.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="p5.min.js"></script>
+    <script type="text/javascript" src="gaussian-blur.js"></script>
+    <div class="page">
+        <div class="header">
+            <header>
+                <nav class="navbar navbar-light">
+                    <a class="navbar-brand" href="/">
+                        <div class="logo">
+                            <h2>Mikel Orobengoa Iregi</h2>
+                        </div>
+                    </a>
+                </nav>
+            </header>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div id="notification" class="notification">
+                    <svg class="notification__warning" xmlns="info-icon" width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M12 24c6.627 0 12-5.373 12-12s-5.373-12-12-12-12 5.373-12 12 5.373 12 12 12zm1-6h-2v-8h2v8zm-1-12.25c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z" />
+                    </svg>
+                    <div class="notification__text">
+                        <p>Image processing finished.</p>
+                        <p>You can save the result by clicking the download button.</p>
+                    </div>
+                    <div id="notification-close" class="notification__close">
+                        <svg xmlns="close-icon" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="canvas-area col-lg-8 column">
+                    <div class="canvas-container">
+                        <main class="result-canvas"></main>
+                    </div>
+                </div>
+                <div class="side-bar col-lg-4 column">
+                    <div class="description-container">
+                        <h1>Sobel operator</h1>
+                        <p>Sobel operator implementation using kernel convolution and <a href="https://p5js.org/"
+                                target="_blank" rel="noreferrer noopener">p5.js</a>.</p>
+                        <p>Upload an image and use the slider to change the filter radius. You can download the result
+                            once the image is processed.</p>
+                        <p><a href="https://processing.org/" target="_blank" rel="noreferrer noopener">Processing</a>
+                            version available on <a
+                                href="https://github.com/Orobe/Kernel-Convolution/tree/main/processing/edge_detection_sobel_operator"
+                                target="_blank" rel="noreferrer noopener">my GitHub</a>.</p>
+                    </div>
+                    <div class="canvas-input">
+                        <div id="input-overlay" class="canvas-input__overlay">
+                            <div class="overlay-loader"></div>
+                        </div>
+                        <div class="file-drop-container">
+                            <form method="post" action="#" id="#">
+                                <div id="input-form" class="form-group files">
+                                    <label>Upload an image</label>
+                                </div>
+                                <div><span class="warning">High resolution images may take a while to process.</span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="preferences-container">
+                            <label>Filter radius: </label><input id="radius-value" type="number" min="1" max="1000" value="1">
+                            <input id="radius-slider" min="1" max="100" value="1" class="form-range radius-range" type="range">
+                        </div>
+                        <div class="button-container">
+                            <button type="button" id="btn-start" class="btn btn-primary btn-start"
+                                onclick="startFilter()" disabled>Start</button>
+                            <button type="button" id="btn-download" class="btn btn-primary btn-download"
+                                onclick="downloadOutput()" disabled>Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

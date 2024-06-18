@@ -1,0 +1,337 @@
+:root {
+    --main-bg-color: #f8f1f1;
+    --main-text-color: #5eaaa8;
+    --main-highlight-color: #a3d2ca;
+    --dark-text-color: #4b8886;
+    --light-complimentary-color: #e3ad80;
+    --main-complimentary-color: #cd6b1a;
+    --dark-complimentary-color: #9f4800;
+}
+
+html, body, .canvas-container {
+    height: 100%;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+canvas {
+    border: 3px solid var(--main-text-color);
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+}
+
+label {
+    color: var(--main-text-color);
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.btn {
+    font-size: 1.4rem;
+}
+
+a, a:link {
+    color: var(--main-complimentary-color);
+}
+
+a:visited {
+    color: var(--dark-complimentary-color);
+}
+
+a:hover {
+    color: var(--light-complimentary-color);
+}
+
+a:active {
+    color: var(--main-highlight-color);
+}
+
+h1 {
+    color: var(--main-text-color);
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--main-text-color);
+    text-align: justify;
+}
+
+.page {
+    height: 100%;
+    /*background-color: pink;*/
+}
+
+.canvas-area {
+    padding: 20px;
+}
+
+@media (min-width: 992px) {
+    .side-bar {
+        border-left: 4px solid var(--main-text-color);
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .canvas-area {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.file-drop-container {
+    background-color: var(--main-highlight-color);
+    border-radius: 25px;
+    border: 3px solid var(--main-text-color);
+    padding: 44px;
+}
+
+.column {
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+.row {
+    height: 100%;
+}
+
+.content {
+    margin: 0 5%;
+}
+
+.result-canvas {
+    margin: 0 auto;
+    position: relative;
+    float: right;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.description-container {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.file-drop-container {
+    margin-bottom: 20px;
+}
+
+.preferences-container {
+    margin-bottom: 20px;
+}
+
+.radius-range::-webkit-slider-thumb {
+    background: var(--main-complimentary-color);
+}
+
+.radius-range::-moz-range-thumb {
+    background: var(--main-complimentary-color);
+}
+
+.radius-range::-ms-thumb {
+    background: var(--main-complimentary-color);
+}
+
+.radius-range::-webkit-slider-runnable-track {
+    background: var(--main-highlight-color);
+}
+
+.radius-range::-webkit-slider-thumb:active {
+    background: var(--dark-complimentary-color);
+}
+
+.radius-range::-moz-range-thumb:active {
+    background: var(--dark-complimentary-color);
+}
+
+.radius-range::-ms-thumb:active {
+    background: var(--dark-complimentary-color);
+}
+
+.radius-range::-webkit-slider-runnable-track {
+    background: var(--main-highlight-color);
+}
+
+.button-container {
+    display: flex;
+}
+
+.button-container button {
+    width: 60%;
+    display: inline-block;
+    margin: 10px auto;
+    max-width: 160px;
+}
+
+.btn-start, .btn-start:hover, .btn-start:focus {
+    background-color: var(--main-complimentary-color);
+    border-color: var(--dark-complimentary-color);
+    color: var(--main-bg-color);
+}
+
+.btn-start:hover, .btn-start:focus {
+    background-color: var(--dark-complimentary-color);
+}
+
+.btn-start:disabled {
+    background-color: var(--light-complimentary-color);
+    border-color: var(--light-complimentary-color);
+}
+
+.btn-download, .btn-download:hover, .btn-download:focus {
+    background-color: var(--main-text-color);
+    border-color: var(--dark-text-color);
+    color: var(--main-bg-color);
+}
+
+.btn-download:hover, .btn-download:focus {
+    background-color: var(--dark-text-color);
+}
+
+.btn-download:disabled {
+    background-color: var(--main-highlight-color);
+    border-color: var(--main-highlight-color);
+}
+
+#radius-value {
+    margin-left: 10px;
+    max-width: 5rem;
+}
+
+.warning {
+    color: var(--dark-complimentary-color);
+}
+
+.notification {
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6650F7;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+    padding: 0;
+}
+
+.notification p {
+    color: var(--main-bg-color);
+    font-size: 1rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.notification__warning {
+    width: 1.5rem;
+    margin-left: 1rem;
+    fill: var(--main-bg-color);
+}
+
+.notification__close {
+    background-color: #4429F5;
+    padding: 1rem;
+    display: flex;
+    cursor: pointer;
+}
+
+.notification__close svg {
+    width: 1rem;
+    fill: var(--main-bg-color);
+}
+
+.notification-show {
+    animation: warning 400ms ease-in-out forwards;
+    display: flex;
+}
+
+@keyframes warning {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+    5% {
+        overflow: 0;
+    }
+    100% {
+        opacity: 1;
+        top: 6rem;
+    }
+}
+
+.canvas-input {
+    position: relative;
+}
+
+.canvas-input__overlay {
+    position: absolute;
+    width: calc(100% + 20px);
+    height: calc(100% + 10px);
+    transform: translateX(-10px) translateY(-10px);
+    background-color: var(--dark-complimentary-color);
+    border-radius: 25px;
+    display: none;
+    animation: input-block 400ms ease-in-out backwards;
+}
+
+.overlay-show {
+    opacity: 0.7;
+    display: flex;
+}
+
+@keyframes input-block {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.overlay-loader {
+    position: relative;
+    margin: auto;
+    border: 12px solid var(--main-bg-color);
+    border-top: 12px solid var(--dark-text-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Header */
+
+.header {
+    background-color: var(--main-highlight-color);
+    border-bottom: 4px solid;
+    border-color: var(--main-text-color);
+}
+
+.header .navbar .logo {
+    margin: 0 1em;
+    color: var(--main-bg-color);
+}
+
+.header .navbar .logo h2 {
+    font-size: 1.5rem;
+}
+
+.header .navbar .navbar-text span {
+    font-size: 1.2rem;
+    color: var(--main-bg-color);
+}
