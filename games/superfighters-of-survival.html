@@ -51,6 +51,89 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+
+            <div class="description vfx-breakdown">
+                <h3>VFX Breakdown</h3>
+                <p>In this section I will go into detail about the creative process behind some of the VFX in
+                    Superfighters of Survival.</p>
+                <h4>Water impact</h4>
+                <p>The water impact effect consists of 5 elements: water splashes, blobs and droplets, bubbles and a
+                    spiky ring.</p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/water_hit.gif" alt="Water impact VFX">
+                </div>
+                <h5>Water splashes, blobs and droplets</h5>
+                <p>To create the water splashes, blobs and droplets I procedurally generated some organic meshes using
+                    Houdini. I also generated a texture using Substance Designer.</p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/sos_water_blob.png" alt="Water blob mesh">
+                    <img src="/resources/images/sos/sos_water_droplets.png" alt="Water droplets mesh">
+                    <img src="/resources/images/sos/sos_water_splash.png" alt="Water splash mesh">
+                </div>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/water_blobs.gif" alt="Water blobs">
+                    <img src="/resources/images/sos/water_droplets.gif" alt="Water droplets">
+                    <img src="/resources/images/sos/water_splashes.gif" alt="Water splashes">
+                </div>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/water.gif" alt="Combined water elements">
+                    <img src="/resources/images/sos/water_tex.png" alt="Water texture">
+                </div>
+                <p></p>
+                <h5>Bubbles</h5>
+                <p>I added some bubbles to be more in line with the playful design of the pool noodle weapon. The
+                    bubbles
+                    use a spherical mesh with a material created by reusing parts of the water shader used for the
+                    scene, simplifying it to make it lighter.</p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/water_bubbles.gif" alt="Water bubbles">
+                </div>
+                <h5>Spiky ring</h5>
+                <p>Although this VFX is quite light hearted, it still needs to represent a weapon impact that deals
+                    damage. Taking this into account, I added a fast flashing light blue ring with spikes. To make it
+                    stand out even more, I added some contrast with a dark ring that renders behind it. The spiky ring
+                    texture was generated in Substance Designer.
+                </p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/spike.gif" alt="Light spiky ring">
+                    <img src="/resources/images/sos/water_spike_bg.gif" alt="Dark ring">
+                    <img src="/resources/images/sos/water_spike.gif" alt="Combined ring">
+                </div>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/spiky_ring_tex.png" alt="Ring texture">
+                </div>
+                <h4>Sword impact</h4>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/sword_hit.gif" alt="Sword hit VFX">
+                </div>
+                <p>The sword impact VFX uses a big horizontal lens flare to accompanied by smaller randomly rotated
+                    flares continued by fast sparks in order to create a sharp, bright hit effect. The lens flare
+                    texture has also been generated using Substance Designer.</p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/sword_horizontal_flare.gif" alt="Sword horizontal flare">
+                    <img src="/resources/images/sos/sword_random_flare.gif" alt="Sword randomly rotated smaller flares">
+                    <img src="/resources/images/sos/sword_sparks.gif" alt="Sword sparks">
+                </div>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/lens_flare_tex.png" alt="Lens flare texture">
+                </div>
+
+                <h4>Fire</h4>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/fire.gif" alt="Fire VFX">
+                </div>
+                <p>The fire effect uses a blob mesh generated in Houdini, eroding it as the particle gets older. Both
+                    the flame and smoke particles use the same mesh, with different color palettes.</p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/fire_flame.gif" alt="Flame">
+                    <img src="/resources/images/sos/fire_smoke.gif" alt="Smoke">
+                </div>
+                <p>The same asset has been used to make the dash dust VFX.</p>
+                <div class="image-reel">
+                    <img src="/resources/images/sos/roll_dust.gif" alt="Flame">
+                    <img src="/resources/images/sos/roll_dust_ingame.gif" alt="Smoke">
+                </div>
+            </div>
         </section>
     </main>
 </body>
